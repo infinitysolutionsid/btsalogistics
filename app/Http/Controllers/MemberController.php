@@ -75,4 +75,8 @@ class MemberController extends Controller
         $data_member->save();
         return back()->with('sukses', 'Member data has been successfully updated!');
     }
+    public function candidate_index()
+    {
+        return view('candidate.index');
+    }
 }

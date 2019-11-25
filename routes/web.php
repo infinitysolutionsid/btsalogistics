@@ -18,7 +18,7 @@ Route::get('/restricted', 'AuthController@login')->name('signin');
 Route::post('/postlogin', 'AuthController@postlogin');
 Route::get('/logout', 'AuthController@logout');
 Route::post('/member/registered', 'MemberController@registered');
-
+Route::get('/candidate', 'MemberController@candidate_index');
 
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/dashboard', 'DashController@index');
