@@ -20,6 +20,8 @@ use Symfony\Component\Mime\Part\TextPart;
  * Implements RFC 7578.
  *
  * @author Fabien Potencier <fabien@symfony.com>
+ *
+ * @experimental in 4.3
  */
 final class FormDataPart extends AbstractMultipartPart
 {
@@ -65,7 +67,7 @@ final class FormDataPart extends AbstractMultipartPart
         return $values;
     }
 
-    private function preparePart(string $name, $value): TextPart
+    private function preparePart($name, $value): TextPart
     {
         if (\is_string($value)) {
             return $this->configurePart($name, new TextPart($value, 'utf-8', 'plain', '8bit'));

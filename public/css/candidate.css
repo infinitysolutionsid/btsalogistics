@@ -1,3 +1,4 @@
+
 /* ==========================================================================
    #FONT
    ========================================================================== */
@@ -97,13 +98,11 @@
     display: block;
     padding: 24px 30px;
   }
-
   .form-row .name,
   .form-row .value {
     display: block;
     width: 100%;
   }
-
   .form-row .name {
     margin-top: 0;
     margin-bottom: 12px;
@@ -128,9 +127,7 @@ html {
   margin: 0;
 }
 
-*,
-*:before,
-*:after {
+*, *:before, *:after {
   -webkit-box-sizing: inherit;
   -moz-box-sizing: inherit;
   box-sizing: inherit;
@@ -143,23 +140,12 @@ html {
  * A very simple reset that sits on top of Normalize.css.
  */
 body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-blockquote,
-p,
-pre,
-dl,
-dd,
-ol,
-ul,
+h1, h2, h3, h4, h5, h6,
+blockquote, p, pre,
+dl, dd, ol, ul,
 figure,
 hr,
-fieldset,
-legend {
+fieldset, legend {
   margin: 0;
   padding: 0;
 }
@@ -167,8 +153,8 @@ legend {
 /**
  * Remove trailing margins from nested lists.
  */
-li>ol,
-li>ul {
+li > ol,
+li > ul {
   margin-bottom: 0;
 }
 
@@ -209,12 +195,7 @@ body {
   font-size: 14px;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
 }
 
@@ -439,12 +420,11 @@ td.active {
   background-color: #2c6ed5;
 }
 
-input[type="date"i] {
+input[type="date" i] {
   padding: 14px;
 }
 
-.table-condensed td,
-.table-condensed th {
+.table-condensed td, .table-condensed th {
   font-size: 14px;
   font-family: "Roboto", "Arial", "Helvetica Neue", sans-serif;
   font-weight: 400;
@@ -465,8 +445,7 @@ input[type="date"i] {
   margin-top: 5px;
 }
 
-.daterangepicker::after,
-.daterangepicker::before {
+.daterangepicker::after, .daterangepicker::before {
   display: none;
 }
 
@@ -592,7 +571,7 @@ textarea {
   display: none;
 }
 
-.input-file+label {
+.input-file + label {
   font-size: 15px;
   color: #fff;
   color: white;
@@ -611,8 +590,8 @@ textarea {
   cursor: pointer;
 }
 
-.input-file:focus+label,
-.input-file+label:hover {
+.input-file:focus + label,
+.input-file + label:hover {
   background: #1b1b1b;
 }
 
@@ -710,22 +689,4 @@ textarea {
   .card-6 .card-footer {
     padding: 50px 30px;
   }
-}
-
-.card {
-  border: 0 !important;
-}
-
-.card-6 .card-body {
-  padding: 0 0 !important;
-}
-
-.headerbio {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 700;
-}
-
-.form-row i {
-  font-size: 7px;
-  color: red;
 }

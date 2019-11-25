@@ -34,11 +34,13 @@
             <div class="card-heading">
                <h2 class="title">Apply for job</h2>
             </div>
-            <div class="card-body">
-               <form method="POST">
+            <?php $tokens = str_random(60); ?>
+            <form action="/candidate/proses" method="post">
+               <div class="card-body">
+                  {{ csrf_field() }}
                   <div class="form-row">
                      <label for="" class="my-1 mr-2">Posisi yang dilamar</label>
-                     <select name="job" id="" class="custom-select my-1 mr-sm-2">
+                     <select name="appliedposition" id="" class="custom-select my-1 mr-sm-2">
                         <option selected>Choose...</option>
                         <option value="IT">IT</option>
                         <option value="HRD">HRD</option>
@@ -50,18 +52,24 @@
                      </div>
                   </div>
                   <div class="form-row">
-                     <div class="form-group col-md-6">
+                     <div class="form-group col-md-4">
+                        <label for="">Upload foto profil kamu <i class="fas fa-star-of-life"></i></label>
+                        <input type="file" name="profilephoto" class="form-control" required>
+                        <small class="form-text text-muted">Foto profil harus diatur berukuran 3x4cm dengan ukuran
+                           dibawah 300kb</small>
+                     </div>
+                     <div class="form-group col-md-5">
                         <label for="">Nama Lengkap <i class="fas fa-star-of-life"></i></label>
                         <input type="text" class="form-control" placeholder="Nama Lengkap" name="nama_lengkap" required>
                      </div>
-                     <div class="form-group col-md-6">
+                     <div class="form-group col-md-3">
                         <label for="">Nama Panggilan</label>
                         <input type="text" name="nama_panggilan" id="" placeholder="Nama Panggilan"
                            class="form-control">
                      </div>
                      <div class="form-group col-md-6">
                         <label for="">Tempat Lahir <i class="fas fa-star-of-life"></i></label>
-                        <select name="born_at" id="" class="custom-select mr-sm-2" required>
+                        <select name="tempat_lahir" id="" class="custom-select mr-sm-2" required>
                            <option selected>Choose...</option>
                            <option value="Medan">Medan</option>
                            <option value="Jakarta">Jakarta</option>
@@ -74,7 +82,7 @@
                      </div>
                      <div class="form-group col-md-3">
                         <label for="">No. KTP <i class="fas fa-star-of-life"></i></label>
-                        <input type="text" name="NoKtp" id="" class="form-control" required>
+                        <input type="text" name="NoKtp" id="" class="form-control" required pattern=".{16,}">
                         <small class="form-text text-muted">Nomor KTP harus dimasukkan karena bersifat wajib.</small>
                      </div>
                      <div class="form-group col-md-3">
@@ -174,17 +182,19 @@
                         </div>
                      </div>
                   </div>
-               </form>
-            </div>
-            <div class="card-footer">
-               <button class="btn btn--radius-2 btn--blue-2" type="submit">Send Application</button>
-            </div>
+
+               </div>
+               <div class="card-footer">
+                  <button class="btn btn--radius-2 btn--blue-2" type="submit">Send Application</button>
+               </div>
+            </form>
          </div>
       </div>
    </div>
+   </div>
 
    <!-- Jquery JS-->
-   <script src="{!!asset('vendor/jquery/jquery/jquery.min.js')!!}"></script>
+   <script src="{!!asset('vendor/jquery/jquery.min.js')!!}"></script>
    <!-- Main JS-->
    <script src="{!!asset('js/candidate.js')!!}"></script>
    {{-- <script>

@@ -121,7 +121,7 @@ EOF;
         }
     }
 EOF;
-            $compiledRoutes[4] = $forDump ? $checkConditionCode.",\n" : eval('return '.$checkConditionCode.';');
+            $compiledRoutes[4] = $forDump ? $checkConditionCode .= ",\n" : eval('return '.$checkConditionCode.';');
         } else {
             $compiledRoutes[4] = $forDump ? "    null, // \$checkCondition\n" : null;
         }
@@ -443,7 +443,7 @@ EOF;
         ];
     }
 
-    private function getExpressionLanguage(): ExpressionLanguage
+    private function getExpressionLanguage()
     {
         if (null === $this->expressionLanguage) {
             if (!class_exists('Symfony\Component\ExpressionLanguage\ExpressionLanguage')) {
@@ -455,7 +455,7 @@ EOF;
         return $this->expressionLanguage;
     }
 
-    private function indent(string $code, int $level = 1): string
+    private function indent($code, $level = 1)
     {
         return preg_replace('/^./m', str_repeat('    ', $level).'$0', $code);
     }
